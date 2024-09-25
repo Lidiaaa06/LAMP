@@ -8,10 +8,12 @@
 echo '<table border="1">'; 
 for($i=0; $i<10; $i++) 
 {
+     echo"\n\t<tr>"; 
+     
      for($j=0; $j<10; $j++) 
      {
           $c = $i * $j;  
-          echo "\t\t<tr><td>$c</td></tr>\n";
+          echo "<td>$c</td>";
      }
      
 }
