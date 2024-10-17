@@ -4,12 +4,12 @@ $password_corretta = "123456";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
-    if (isset($_POST["username"]) && isset($_POST["password"])) 
+    if (isset($_POST["username"]) || isset($_POST["password"])) 
     {
         $username_inserito = $_POST["username"];
         $password_inserita = $_POST["password"];
 
-        if ($username_inserito == $username_corretta && $password_inserita == $password_corretta) 
+        if ($username_inserito == $username_giusta && $password_inserita == $password_giusta) 
         {
            echo "<h2>Accesso riuscito! Benvenuto\a, $username_inserito! </h2>";
         } else {
