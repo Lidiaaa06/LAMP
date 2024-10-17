@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
         if ($username_inserito == $username_corretta && $password_inserita == $password_corretta) 
         {
-           echo "<h2>Accesso riuscito! Benvenuto, $username_inserito! </h2>";
+           echo "<h2>Accesso riuscito! Benvenuto\a, $username_inserito! </h2>";
         } else {
             echo "<h2>Username o password errati! Riprova.</h2>";
             
