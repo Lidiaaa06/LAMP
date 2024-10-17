@@ -13,21 +13,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         {
            echo "<h2>Accesso riuscito! Benvenuto\a, $username_inserito! </h2>";
         } else {
-            echo "<h2>Username o password errati! Riprova.</h2>";
+            echo "<h2>password o username errati! Riprova.</h2>";
             
-            visualizza_form();
+            visualform();
                }
     }else {
        
-        visualizza_form();
+        visualform();
           }
 }else {
    
-    visualizza_form();
+    visualform();
       }
 
 
-function visualizza_form() 
+function visualform() 
 {
   echo '
   <form action="" method="post">
