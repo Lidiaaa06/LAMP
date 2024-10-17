@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         $numero = $_POST['numero'];
 
       
-        echo "<h2>Tabella dei Quadrati e dei Cubi</h2>";
+        echo "<h2>Tabella dei Cubi e dei Quadrati</h2>";
         echo "<table border='1'>
                 <tr>
                     <th>Numero</th>
@@ -29,11 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     }
 } else {
    
-    visualizzaForm();
+    visualForm();
 }
 
 
-function visualizzaForm() 
+function visualForm() 
 {
     echo '
     <h2>Tabella dei Quadrati e dei Cubi</h2>
