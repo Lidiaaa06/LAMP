@@ -14,19 +14,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
            echo "<h2>Accesso riuscito! Benvenuto, $username_inserito! </h2>";
         } else {
             echo "<h2>Username o password errati! Riprova.</h2>";
-            //dati errati rivisualizzare il form
+            
             visualizza_form();
                }
     }else {
-        //i campinon sono stati mandati rivisualizza il form
+       
         visualizza_form();
           }
 }else {
-    //prima accesso alla pagina e visualizza il form
+   
     visualizza_form();
       }
 
-//funzione per visualizzare il form
+
 function visualizza_form() 
 {
   echo '
