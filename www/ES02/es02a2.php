@@ -1,9 +1,9 @@
 <?php
-$username = $_POST['username'];
-$passwd = $_POST['password'];
+$username = $_GET['username'];
+$passwd = $_GET['password'];
 
 
-if($username=="Mario" && $passwd=="123") 
+if($username=="Lidia" && $passwd=="1234") 
 {
   $msg = "Benvenuto\a $username nella pagina riservata del mio sito!";
 } else {
