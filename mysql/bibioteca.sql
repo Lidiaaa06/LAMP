@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS film (
     durata_minuti INT,
     genere VARCHAR (100),
     id_regista INT,
-    FOREIGN KEY (id_regista) REFERENCES autori(id_regista)
+    FOREIGN KEY (id_regista) REFERENCES regista(id_regista)
 );
 
 -- Inserire alcuni dati nella tabella dei film
