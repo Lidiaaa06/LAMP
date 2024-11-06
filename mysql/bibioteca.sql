@@ -20,3 +20,26 @@ VALUES
 
 -- Verifico il corretto inserimento dei dati
 SELECT * FROM autori;
+
+-- Creare un nuovo database
+CREATE DATABASE IF NOT EXISTS videoteca;
+USE videoteca;
+
+-- Creare la tabella dei film
+CREATE TABLE IF NOT EXISTS film (
+    id_film INT AUTO_INCREMENT PRIMARY KEY,
+    titolo VARCHAR(100) NOT NULL,
+    anno_uscita YEAR,
+    durata_minuti INT,
+    id_autore INT,
+    FOREIGN KEY (id_autore) REFERENCES autori(id_autore)
+);
+
+-- Inserire alcuni dati nella tabella dei film
+INSERT INTO film (titolo, anno_uscita, durata_minuti, id_autore)
+VALUES
+    ('Pride and Prejudice', 1813, 179, 1),
+    ('1984', 1949, 134, 2),
+
+
+                
