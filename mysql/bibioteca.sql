@@ -31,15 +31,12 @@ CREATE TABLE IF NOT EXISTS film (
     titolo VARCHAR(100) NOT NULL,
     anno_uscita YEAR,
     durata_minuti INT,
-    id_autore INT,
-    FOREIGN KEY (id_autore) REFERENCES autori(id_autore)
+    genere VARCHAR (100),
+    id_regista INT,
+    FOREIGN KEY (id_regista) REFERENCES autori(id_regista)
 );
 
 -- Inserire alcuni dati nella tabella dei film
-INSERT INTO film (titolo, anno_uscita, durata_minuti, id_autore)
+INSERT INTO film (titolo, anno_uscita, durata_minuti, id_regista)
 VALUES
-    ('Pride and Prejudice', 1813, 179, 1),
-    ('1984', 1949, 134, 2),
-
-
-                
+    
