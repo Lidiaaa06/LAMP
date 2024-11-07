@@ -21,6 +21,16 @@ VALUES
 -- Verifico il corretto inserimento dei dati
 SELECT * FROM autori;
 
+
+
+
+
+
+
+
+
+
+
 -- Creare un nuovo database
 CREATE DATABASE IF NOT EXISTS videoteca;
 USE videoteca;
