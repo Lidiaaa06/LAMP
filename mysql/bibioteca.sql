@@ -55,6 +55,8 @@ VALUES
   ('peter pan','1953','76','per famiglie',4),
   ('nemo','2003','100','per famiglie',5);
 
+  SELECT * FROM film;
+
 -- Creare la tabella degli registi
 CREATE TABLE IF NOT EXISTS registi (
     id_registi INT AUTO_INCREMENT PRIMARY KEY,
@@ -67,18 +69,30 @@ CREATE TABLE IF NOT EXISTS registi (
 -- Inserire alcuni dati nella tabella degli registi 
 INSERT INTO registi (nome, nazionalita, data_nascita, data_morte)
 VALUES
-('George Orwell', 'Inglese', '25-06-1903','21-01-1950'),
-('James Cameron','Canadese','16-08-1954'),
-('Wolfgang Reitherman','statunitense','26-06-1909','22-05-1985'),
-('J. M. Barrie','britannico','9-05-1860','19-06-1937'),
-('Andrew Stanton','statunitense','3-12-1965');
+('George Orwell', 'Inglese', 25-06-1903,21-01-1950),
+('James Cameron','Canadese',16-08-1954),
+('Wolfgang Reitherman','statunitense',26-06-1909,22-05-1985),
+('J. M. Barrie','britannico',9-05-1860,19-06-1937),
+('Andrew Stanton','statunitense',3-12-1965);
+
+SELECT * FROM registi;
 
 -- Creare la tabella dei clienti
 CREATE TABLE IF NOT EXISTS clienti (
-
     matricola INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
     cognome VARCHAR(50) NOT NULL,
     email VARCHAR(100),
     FOREIGN KEY (id_film) REFERENCES film(id_film)
 );
+
+-- Inserire alcuni dati nella tabella degli registi 
+INSERT INTO clienti (nome,cognome,email)
+VALUES
+('marco','rossi','marcorossi@gmail.com'),
+('giulia','bianchi','giulietta05@gmail.com'),
+('giorgio','verdi','gio_verdi@gmail.it'),
+('martina','gialli','marty_99@gmail.it');
+
+-- Verifico il corretto inserimento dei dati
+SELECT * FROM clienti;
