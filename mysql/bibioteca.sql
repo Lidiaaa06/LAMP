@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS film (
 );
 
 -- Inserire alcuni dati nella tabella dei film
-INSERT INTO film (titolo, anno_uscita, durata_minuti, id_regista)
+INSERT INTO film (id_film,titolo, anno_uscita, durata_minuti, id_regista)
 VALUES 
   ('1984',1984,110,'sci-fi',1),
   ('titanic',1997,194,'romantico',2),
