@@ -49,11 +49,11 @@ CREATE TABLE IF NOT EXISTS film (
 -- Inserire alcuni dati nella tabella dei film
 INSERT INTO film (titolo, anno_uscita, durata_minuti, id_regista)
 VALUES 
-  ('1984','1984','110','sci-fi',1),
-  ('titanic','1997','194','romantico',2),
-  ('la carica dei 101','1961','79','per famiglie',3),
-  ('peter pan','1953','76','per famiglie',4),
-  ('nemo','2003','100','per famiglie',5);
+  ('1984',1984,110,'sci-fi',1),
+  ('titanic',1997,194,'romantico',2),
+  ('la carica dei 101',1961,79,'per famiglie',3),
+  ('peter pan',1953,76,'per famiglie',4),
+  ('nemo',2003,100,'per famiglie',5);
 
   SELECT * FROM film;
 
