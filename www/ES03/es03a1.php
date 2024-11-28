@@ -34,6 +34,8 @@
 
         $nickname = isset($_POST['nickname']) ? $_POST['nickname'] : 'Non fornito';
 
+        $nickname = isset($_POST['pasword']) ? $_POST['password'] : 'Non fornito';
+
         
         // Visualizzazione dei dati
         echo "<p><strong>Nome:</strong> $nome</p>";
@@ -47,6 +49,8 @@
         echo "<p><strong>Comune:</strong> $Comune</p>";
         echo "<p><strong>Provincia:</strong> $provincia</p>";
         echo "<p><strong>Nickname:</strong> $nickname</p>";
+        echo "<p><strong>Password:</strong> $password</p>";
+
     } else {
         echo "<p>Nessun dato è stato inviato.</p>";
     }
