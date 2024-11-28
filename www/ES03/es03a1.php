@@ -1,3 +1,35 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Raccolta dati dal form
+    $nome = filter_input(INPUT_POST, 'nome');
+    $cognome = filter_input(INPUT_POST, 'cognome');
+    $data_nascita = $_POST['data_nascita'];
+    $codice_fiscale = filter_input(INPUT_POST, 'codice_fiscale');
+    $email = filter_input(INPUT_POST, 'email');
+    $cellulare = filter_input(INPUT_POST, 'cellulare');
+    $via = filter_input(INPUT_POST, 'via');
+    $CAP = filter_input(INPUT_POST, 'CAP');
+    $comune = filter_input(INPUT_POST, 'comune');
+    $provincia = filter_input(INPUT_POST, 'provincia');
+    $nickname = filter_input(INPUT_POST, 'nickname');
+    $password = $_POST['password'];
+
+    // Validazione aggiuntiva nickname
+    if ($nickname === $nome || $nickname === $cognome) {
+        echo "Il nickname non può essere uguale al nome o al cognome.";
+        exit;
+    }
+
+    // Validazione password
+    if (!preg_match("/(?=.*[A-Z])(?=.*\d)(?=.*\W).{8,}/", $password)) {
+        echo "La password deve contenere almeno una maiuscola, un numero e un carattere speciale.";
+        exit;
+    }
+
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -34,7 +66,7 @@
 
         $nickname = isset($_POST['nickname']) ? $_POST['nickname'] : 'Non fornito';
 
-        $password = isset($_POST['pasword']) ? $_POST['password'] : 'Non fornito';
+        $password = isset($_POST['password']) ? $_POST['password'] : 'Non fornito';
 
         
         // Visualizzazione dei dati
@@ -46,7 +78,7 @@
         echo "<p><strong>Cellulare:</strong> $cellulare</p>";
         echo "<p><strong>Via:</strong> $via</p>";
         echo "<p><strong>CAP:</strong> $CAP</p>";
-        echo "<p><strong>Comune:</strong> $Comune</p>";
+        echo "<p><strong>Comune:</strong> $comune</p>";
         echo "<p><strong>Provincia:</strong> $provincia</p>";
         echo "<p><strong>Nickname:</strong> $nickname</p>";
         echo "<p><strong>Password:</strong> $password</p>";

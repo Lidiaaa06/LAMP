@@ -1,31 +1,3 @@
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Raccolta dati dal form
-    $nome = filter_input(INPUT_POST, 'nome');
-    $cognome = filter_input(INPUT_POST, 'cognome');
-    $data_nascita = $_POST['data_nascita'];
-    $codice_fiscale = filter_input(INPUT_POST, 'codice_fiscale');
-    $email = filter_input(INPUT_POST, 'email');
-    $cellulare = filter_input(INPUT_POST, 'cellulare');
-    $indirizzo = filter_input(INPUT_POST, 'indirizzo');
-    $nickname = filter_input(INPUT_POST, 'nickname');
-    $password = $_POST['password'];
-
-    // Validazione aggiuntiva nickname
-    if ($nickname === $nome || $nickname === $cognome) {
-        echo "Il nickname non può essere uguale al nome o al cognome.";
-        exit;
-    }
-
-    // Validazione password
-    if (!preg_match("/(?=.*[A-Z])(?=.*\d)(?=.*\W).{8,}/", $password)) {
-        echo "La password deve contenere almeno una maiuscola, un numero e un carattere speciale.";
-        exit;
-    }
-
-}
-?>
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
