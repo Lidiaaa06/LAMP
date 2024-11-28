@@ -34,7 +34,7 @@
 
         $nickname = isset($_POST['nickname']) ? $_POST['nickname'] : 'Non fornito';
 
-        $nickname = isset($_POST['pasword']) ? $_POST['password'] : 'Non fornito';
+        $password = isset($_POST['pasword']) ? $_POST['password'] : 'Non fornito';
 
         
         // Visualizzazione dei dati
