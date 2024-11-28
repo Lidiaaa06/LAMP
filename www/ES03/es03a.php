@@ -23,16 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // Controllo e memorizzazione dati
-    echo "Dati ricevuti:<br>";
-    echo "Nome: $nome<br>";
-    echo "Cognome: $cognome<br>";
-    echo "Data di nascita: $data_nascita<br>";
-    echo "Codice Fiscale: $codice_fiscale<br>";
-    echo "Email: $email<br>";
-    echo "Cellulare: $cellulare<br>";
-    echo "Indirizzo: $indirizzo<br>";
-    echo "Nickname: $nickname<br>";
 }
 ?>
 
@@ -88,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
          <!-- Comune -->
          <label for="Comune">Comune*:</label>
-        <input type="text" id="Comune" name="Comune" required>
+        <input type="text" id="comune" name="comune" required>
         <br><br>
 
          <!-- Provincia -->
