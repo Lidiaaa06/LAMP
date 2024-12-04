@@ -14,12 +14,12 @@
        
         if ($hour >= 8 && $hour < 12) 
         {
-            $greeting = "Buongiorno";
+            $saluto= "Buongiorno";
         } elseif ($hour >= 12 && $hour < 20)
         {
-            $greeting = "Buonasera";
+            $saluto = "Buonasera";
         } else {
-            $greeting = "Buonanotte";
+            $saluto = "Buonanotte";
         }
 
         $browser = $_SERVER['HTTP_USER_AGENT'];
