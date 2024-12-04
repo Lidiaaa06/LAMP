@@ -1,17 +1,17 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Raccolta dati dal form
-    $nome = filter_input(INPUT_POST, 'nome');
-    $cognome = filter_input(INPUT_POST, 'cognome');
+    $nome = $_POST['nome'];              
+    $cognome = $_POST['cognome'];
     $data_nascita = $_POST['data_nascita'];
-    $codice_fiscale = filter_input(INPUT_POST, 'codice_fiscale');
-    $email = filter_input(INPUT_POST, 'email');
-    $cellulare = filter_input(INPUT_POST, 'cellulare');
-    $via = filter_input(INPUT_POST, 'via');
-    $CAP = filter_input(INPUT_POST, 'CAP');
-    $comune = filter_input(INPUT_POST, 'comune');
-    $provincia = filter_input(INPUT_POST, 'provincia');
-    $nickname = filter_input(INPUT_POST, 'nickname');
+    $codice_fiscale =$_POST['codice_fiscale'];
+    $email = $_POST['email'];
+    $cellulare = $_POST['cellulare'];
+    $via = $_POST['via'];
+    $CAP = $_POST['CAP'];
+    $comune = $_POST['comune'];
+    $provincia = $_POST['provincia'];
+    $nickname = $_POST['nickname'];
     $password = $_POST['password'];
 
     // Validazione aggiuntiva nickname
