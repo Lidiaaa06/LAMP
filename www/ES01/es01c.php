@@ -35,7 +35,7 @@ for ($i = 8; $i >= 1; $i--)
     
     for ($j = 1; $j <= 8 - $i; $j++) 
     {
-        echo "&nbsp;&nbsp;";
+        echo "&nbsp;&nbsp;"; //stampa 2 spazi
     }
    
     for ($k = 1; $k <= $i; $k++) 
