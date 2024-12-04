@@ -47,13 +47,13 @@ CREATE TABLE IF NOT EXISTS film (
 );
 
 -- Inserire alcuni dati nella tabella dei film
-INSERT INTO film (id_film,titolo, anno_uscita, durata_minuti, id_regista)
+INSERT INTO film (id_film,titolo, anno_uscita, durata_minuti,genere)
 VALUES 
-  ('1984',1984,110,'sci-fi',1),
-  ('titanic',1997,194,'romantico',2),
-  ('la carica dei 101',1961,79,'per famiglie',3),
-  ('peter pan',1953,76,'per famiglie',4),
-  ('nemo',2003,100,'per famiglie',5);
+  ('1984',1984,110,'sci-fi'),
+  ('titanic',1997,194,'romantico'),
+  ('la carica dei 101',1961,79,'per famiglie'),
+  ('peter pan',1953,76,'per famiglie'),
+  ('nemo',2003,100,'per famiglie');
 
   SELECT * FROM film;
 
@@ -76,6 +76,21 @@ VALUES
 ('Andrew Stanton','statunitense',3-12-1965);
 
 SELECT * FROM registi;
+
+
+-- Creare la tabella dei generi
+CREATE TABLE IF NOT EXISTS genere (
+    id_genere INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(50) NOT NULL
+);
+
+-- Inserire alcuni dati nella tabella dei generi
+INSERT INTO genere (nome)
+VALUES
+(sci-fi)
+(romantico)
+(per famiglie);
+
 
 -- Creare la tabella dei clienti
 CREATE TABLE IF NOT EXISTS clienti (
