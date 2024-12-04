@@ -111,3 +111,22 @@ VALUES
 
 -- Verifico il corretto inserimento dei dati
 SELECT * FROM clienti;
+
+-- Creare la tabella degli affitti
+CREATE TABLE IF NOT EXISTS affiti (
+    id_affitto INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT,
+    id_film INT,
+    data_inizio DATE,
+    data_fine DATE,
+    FOREIGN KEY (id_cliente) REFERENCES clienti(matricola),
+    FOREIGN KEY (id_film) REFERENCES film (id_film);
+);
+
+-- Inserire alcuni dati nella tabella degli affitti 
+INSERT INTO affiti (id_cliente, id_film, data_inizio, data_fine)
+VALUES
+()
+
+-- Verifico il corretto inserimento dei dati
+SELECT * FROM affiti;
