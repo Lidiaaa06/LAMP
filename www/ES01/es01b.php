@@ -25,6 +25,6 @@
         $browser = $_SERVER['HTTP_USER_AGENT'];
 
         
-        echo "$greeting $name, benvenuta nella mia prima pagina PHP!<br>";
+        echo "$saluto $name, benvenuta nella mia prima pagina PHP!<br>";
         echo "Stai usando il browser: $browser";
     ?>
