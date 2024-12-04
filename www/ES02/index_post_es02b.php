@@ -1,6 +1,6 @@
 <?php
-$username_corretta = "Lidia";
-$password_corretta = "123456";
+$username_giusta = "Lidia";
+$password_giusta = "123456";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
