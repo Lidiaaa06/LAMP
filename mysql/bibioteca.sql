@@ -126,7 +126,9 @@ CREATE TABLE IF NOT EXISTS affiti (
 -- Inserire alcuni dati nella tabella degli affitti 
 INSERT INTO affiti (id_cliente, id_film, data_inizio, data_fine)
 VALUES
-()
+(1,1,'12\12\2024','15\12\2024')
+(2,3,'1\11\2024','12\12\2024')
+(3,2,'14\10\2024','10\1\2025');
 
 -- Verifico il corretto inserimento dei dati
 SELECT * FROM affiti;
