@@ -5,7 +5,6 @@
  * from folder network/..
  * javac network/TcpServer.java; java network.TcpServer 
  */
-package network;
 
 import java.io.*;
 import java.net.ServerSocket;
