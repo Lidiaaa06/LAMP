@@ -167,7 +167,3 @@ UNLOCK TABLES;
 
 -- Dump completed on 2024-12-19  8:36:41
 
-
-
- mysql -u root videoteca < videoteca_v1_191224.sql 
- mysql -u root
