@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS genere (
 
 --creare tabella registi
 CREATE TABLE IF NOT EXISTS registi (
-    id_registi INT PRIMARY KEY,
+    id_registi INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
     nazionalita VARCHAR(50),
     data_nascita DATE,
@@ -64,16 +64,23 @@ VALUES
   ('nemo',2003,100,'per famiglie');
 
   SELECT * FROM film;
+-- Inserire alcuni dati nella tabella degli registi 
+INSERT INTO registi (nome, nazionalita, data_nascita, data_morte)
+VALUES
+('Frank Herbert', 'Americano', '1935-03-19', NULL),
+('Clint Eastwood', 'Americano', '1924-12-19', NULL),
+('Mario Puzo', 'Americano', '1954-07-23', NULL);
 
+SELECT * FROM registi;
 
 -- Inserire alcuni dati nella tabella degli registi 
 INSERT INTO registi (nome, nazionalita, data_nascita, data_morte)
 VALUES
-('George Orwell', 'Inglese', 25-06-1903,21-01-1950),
-('James Cameron','Canadese',16-08-1954, NULL),
-('Wolfgang Reitherman','statunitense',26-06-1909,22-05-1985),
-('J. M. Barrie','britannico',9-05-1860,19-06-1937),
-('Andrew Stanton','statunitense',3-12-1965, NULL);
+('George Orwell', 'Inglese', '25-06-1903','21-01-1950'),
+('James Cameron','Canadese','16-08-1954', NULL),
+('Wolfgang Reitherman','statunitense','26-06-1909','22-05-1985'),
+('J. M. Barrie','britannico','9-05-1860','19-06-1937'),
+('Andrew Stanton','statunitense','3-12-1965', NULL);
 
 SELECT * FROM registi;
 
