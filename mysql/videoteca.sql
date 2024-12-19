@@ -65,39 +65,33 @@ VALUES
 
   SELECT * FROM film;
 -- Inserire alcuni dati nella tabella degli registi 
-INSERT INTO registi (nome, nazionalita, data_nascita, data_morte)
-VALUES
-('Frank Herbert', 'Americano', '1935-03-19', NULL),
-('Clint Eastwood', 'Americano', '1924-12-19', NULL),
-('Mario Puzo', 'Americano', '1954-07-23', NULL);
 
-SELECT * FROM registi;
 
 -- Inserire alcuni dati nella tabella degli registi 
 INSERT INTO registi (nome, nazionalita, data_nascita, data_morte)
 VALUES
-('George Orwell', 'Inglese', '25-06-1903','21-01-1950'),
-('James Cameron','Canadese','16-08-1954', NULL),
-('Wolfgang Reitherman','statunitense','26-06-1909','22-05-1985'),
-('J. M. Barrie','britannico','9-05-1860','19-06-1937'),
-('Andrew Stanton','statunitense','3-12-1965', NULL);
+('George Orwell', 'Inglese', '1903-06-25','1950-01-21'),
+('James Cameron','Canadese','1954-08-16', NULL),
+('Wolfgang Reitherman','statunitense','1909-06-26','1985-05-07'),
+('J. M. Barrie','britannico','1860-05-09','1937-06-19'),
+('Andrew Stanton','statunitense','1965-12-03', NULL);
 
 SELECT * FROM registi;
 
 -- Inserire alcuni dati nella tabella dei generi
 INSERT INTO genere (nome)
 VALUES
-('sci-fi')
-('romantico')
+('sci-fi'),
+('romantico'),
 ('per famiglie');
 
 -- Inserire alcuni dati nella tabella degli registi 
-INSERT INTO clienti (nome,cognome,email)
+INSERT INTO clienti (id_film,nome,cognome,email)
 VALUES
-('marco','rossi','marcorossi@gmail.com'),
-('giulia','bianchi','giulietta05@gmail.com'),
-('giorgio','verdi','gio_verdi@gmail.it'),
-('martina','gialli','marty_99@gmail.it');
+(1,'marco','rossi','marcorossi@gmail.com'),
+(2,'giulia','bianchi','giulietta05@gmail.com'),
+(3,'giorgio','verdi','gio_verdi@gmail.it'),
+(4,'martina','gialli','marty_99@gmail.it');
 
 -- Verifico il corretto inserimento dei dati
 SELECT * FROM clienti;
@@ -105,9 +99,9 @@ SELECT * FROM clienti;
 -- Inserire alcuni dati nella tabella degli affitti 
 INSERT INTO affiti (id_cliente, id_film, data_inizio, data_fine)
 VALUES
-(1,1,'12\12\2024','15\12\2024')
-(2,3,'1\11\2024','12\12\2024')
-(3,2,'14\10\2024','10\1\2025');
+(1,1,'2014-09-22','2015-06-06'),
+(2,3,'2017-05-13','2017-09-30'),
+(3,2,'2020-01-06','2020-01-21');
 
 -- Verifico il corretto inserimento dei dati
 SELECT * FROM affiti;
