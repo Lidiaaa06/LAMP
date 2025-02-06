@@ -1,3 +1,6 @@
+
+<h1>Devi prima fare accesso!</h1>
+
 <?php
     session_start();
     if(!isset($_SESSION['username']))
