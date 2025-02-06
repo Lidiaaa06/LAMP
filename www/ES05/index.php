@@ -1,6 +1,7 @@
 <?php
 session_start();
-if(isset($_SESSION['username'])){
+if(isset($_SESSION['username']))
+{
     $link = "<a href='logout.php'>Logout</a>";
 } else {
     $link = "<a href='login.php'>Login</a>";
@@ -8,7 +9,7 @@ if(isset($_SESSION['username'])){
 
 ?>
 <!DOCTYPE html>
-<html lang="it">
+<html>
 <head>
 <title>Benvenuto</title>
 </head>

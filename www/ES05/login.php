@@ -44,15 +44,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     <?=$mes_err?>
 
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-        <label for="username">Username</label>
+        <label for="username">username</label>
         <input type="text" name="username" id="username">
         <br>
-        <label for="password">Password</label>
+        <label for="password">password</label>
         <input type="password" name="password" id="password">
         <br>
         <input type="submit" value="Accedi">
 
-        <input type="hidden" name="from" value="<?=$_GET['from'] ?? null ?>" >
+        <input type="hidden" name="from" value="<?=$_GET['from'] ?? null ?>" > 
     </form>
 </body>
 </html>
