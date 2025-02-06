@@ -1,6 +1,7 @@
 <?php
     session_start();
-    if(!isset($_SESSION['username'])){
+    if(!isset($_SESSION['username']))
+    {
         $url = 'login.php?error=Fare prima il login&from=';
         $url .= basename($_SERVER['PHP_SELF']);
         header("Location: $url");
