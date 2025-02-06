@@ -1,5 +1,5 @@
 
-<h3>Benvenuto!</h3>
+<h3>Benvenuto</h3>
 
 <?php
     session_start();
