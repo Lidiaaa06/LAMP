@@ -41,9 +41,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     <title>Pagina_di_Login</title>
 </head>
 <body>
-    <?=$mes_err?>
-    <h1>Benvenuto! Fai accesso</h1>
 
+<h3>Benvenuto! Fai accesso</h3>
+
+    <?=$mes_err?>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
         <label for="username">username</label>
         <input type="text" name="username" id="username">
