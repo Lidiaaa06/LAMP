@@ -1,10 +1,10 @@
 
-<h3>Devi prima fare accesso!</h3>
+<h3>Benvenuto!</h3>
 
 <?php
     session_start();
     if(!isset($_SESSION['username']))
-    {
+    { $url = 'login.php?error=Devi prima fare accesso&from=';
         $url .= basename($_SERVER['PHP_SELF']);
         header("Location: $url");
         die();
