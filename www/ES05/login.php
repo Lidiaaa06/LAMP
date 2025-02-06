@@ -1,0 +1,58 @@
+<?php
+session_start();
+if (isset($_SESSION['username'])) 
+{
+    header('Location: index.php'); //reindirizza 
+    die();
+}
+
+if (isset($_GET['error'])) 
+{
+    $mes_err =$_GET['error'] . '</h3>';
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') 
+{
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    if ($username == 'admin' && $password == 'admin') 
+    {
+        $_SESSION['username'] = $username;
+        
+        $url = 'Location: ';
+        $url .= $_POST['from'] == null ? 'index.php' : $_POST['from'];
+
+        header($url);
+        die();
+
+    } else {
+        $mes_err ="<h3> username o pasword sbagliati </h3>";
+    }
+}
+
+
+?>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pagina_di_Login</title>
+</head>
+<body>
+    <?=$mes_err?>
+
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username">
+        <br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+        <br>
+        <input type="submit" value="Accedi">
+
+        <input type="hidden" name="from" value="<?=$_GET['from'] ?? null ?>" >
+    </form>
+</body>
+</html>
