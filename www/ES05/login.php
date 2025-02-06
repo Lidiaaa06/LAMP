@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 </head>
 <body>
 
-<h3>Benvenuto! Fai l'accesso</h3>
+<h3>Benvenuto!</h3>
 
     <?=$mes_err?>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
