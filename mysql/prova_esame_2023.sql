@@ -1,3 +1,6 @@
+CREATE DATABASE IF NOT EXISTS Scuola;
+Use Scuola;
+
 create table Studenti (
     matricola int not null PRIMARY KEY
     nome varchar(50) not null,
