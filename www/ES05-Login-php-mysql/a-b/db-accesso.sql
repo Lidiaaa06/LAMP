@@ -4,12 +4,12 @@ USE ES05; SHOW DATABASES;
 
 
 -- DROP USER IF EXISTS ES05_@user;
-CREATE USER IF NOT EXISTS ES05_@user IDENTIFIED BY 'password';
+CREATE USER IF NOT EXISTS ES05_new@'%' IDENTIFIED BY 'pwd';
 -- ALTER USER ES05_@user IDENTIFIED BY 'nuova_password';
 SELECT user, host FROM mysql.user;
-GRANT SELECT, INSERT, UPDATE, DELETE ON ES05.* TO ES05_@user;
+GRANT SELECT, INSERT, UPDATE, DELETE ON ES05.* TO ES05_new@'%';
 -- GRANT ALL ON ES05.* TO ES05_@user;
-SHOW GRANTS FOR ES05_@user;
+SHOW GRANTS FOR ES05_new@'%';
 
 -- DROP TABLE IF EXISTS utente;
 CREATE TABLE IF NOT EXISTS utente (
@@ -26,6 +26,7 @@ INSERT INTO utente (UserID, Username, Password
 
 INSERT INTO utente VALUES 
 (NULL, 'mrossi', '123'),
-(NULL, 'admin', 'admin');
+(NULL, 'admin', 'admin'),
+(NULL, 'ES05_@user', 'password');
 
 SELECT * FROM utente;
