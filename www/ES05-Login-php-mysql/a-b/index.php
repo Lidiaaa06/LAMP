@@ -1,9 +1,9 @@
 <?php
 // Costanti per la connessione al database
 define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'db_user');
-define('DB_PASSWORD', 'db_pwd');
-define('DB_NAME', 'nome_database');
+define('DB_USERNAME', 'ES05_@user');
+define('DB_PASSWORD', 'password');
+define('DB_NAME', 'ES05');
 $html_out = "";
 try {
 // Connessione al database
