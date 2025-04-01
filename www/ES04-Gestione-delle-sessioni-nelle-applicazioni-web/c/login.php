@@ -54,7 +54,8 @@
     {
         $timeLeft = $_SESSION['timestamp'] + 60 - $_SERVER['REQUEST_TIME'];
     
-        if ($timeLeft <= 0) {
+        if ($timeLeft <= 0) 
+        {
             $_SESSION['prove'] = 3;
             $_SESSION['timestamp'] = null;
         } else {
