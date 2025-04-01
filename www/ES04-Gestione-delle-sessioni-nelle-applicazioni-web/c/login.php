@@ -31,9 +31,9 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    [$retval, $retmsg] = login_control($username, $password);
+    [$rest_val, $rest_mess] = login_control($username, $password);
 
-    if ($retval)
+    if ($rest_val)
      {
         session_unset(); 
 
@@ -42,7 +42,7 @@
         header('Location: ' . ($_POST['from'] ?? 'index.php'));
         die();
 }else {
-            $error_mess = $retmsg;
+            $error_mess = $rest_mess;
             $_SESSION['Tentativi']--;
             $error_mess .= '. Tentativi rimasti: '.$_SESSION['Tentativi'];
             if($_SESSION['Tentativi'] == 0) {
