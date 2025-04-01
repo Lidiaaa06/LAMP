@@ -9,9 +9,9 @@
 
     require 'funzioni.php';
 
-    [$sessionretval, $sessionerrmsg] = session_control();
+    [$rest_val, $rest_mess] = session_control();
 
-    if($sessionretval) 
+    if($rest_val) 
     {
         $link = 'Location: ';
         $link .= $_GET['from'] ?? 'index.php';
@@ -22,7 +22,7 @@
 
     $error_mess = $_GET['errore'] ?? '';
 
-    [$retval, $retmsg] = login_control($username, $password);
+    [$rest_val, $rest_mess] = login_control($username, $password);
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && 
     (!isset($_SESSION['tempo']) || time() - $_SESSION['tempo'] >= 60)) 
@@ -33,8 +33,9 @@
 
     [$retval, $retmsg] = login_control($username, $password);
 
-    if ($retval) {
-        session_unset();
+    if ($retval)
+     {
+        session_unset(); 
 
         $_SESSION['username'] = $username;
 
