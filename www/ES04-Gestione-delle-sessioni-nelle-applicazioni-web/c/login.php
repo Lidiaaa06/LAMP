@@ -1,16 +1,18 @@
 <?php
     session_start();
 
-    if($_SERVER['REQUEST_METHOD'] == 'GET') {
-        $_SESSION['prove'] = 5;
+    if($_SERVER['REQUEST_METHOD'] == 'GET') 
+    {
+        $_SESSION['prove'] = 3 ;
         $_SESSION['tempo'] = null;
     }
 
     require 'funzioni.php';
 
-    [$sessionretval, $sessionerrmsg] = controllosessione();
+    [$sessionretval, $sessionerrmsg] = session_control();
 
-    if($sessionretval) {
+    if($sessionretval) 
+    {
         $link = 'Location: ';
         $link .= $_GET['from'] ?? 'index.php';
     
@@ -18,9 +20,9 @@
         die();
     }
 
-    $err_mess = $_GET['error'] ?? '';
+    $error_mess = $_GET['errore'] ?? '';
 
-    [$retval, $retmsg] = controlloLogin($username, $password);
+    [$retval, $retmsg] = login_control($username, $password);
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && 
     (!isset($_SESSION['tempo']) || time() - $_SESSION['tempo'] >= 60)) {
@@ -28,7 +30,7 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    [$retval, $retmsg] = controlloLogin($username, $password);
+    [$retval, $retmsg] = login_control($username, $password);
 
     if ($retval) {
         session_unset();
@@ -38,23 +40,24 @@
         header('Location: ' . ($_POST['from'] ?? 'index.php'));
         die();
 }else {
-            $err_mess = $retmsg;
-            $_SESSION['prove']--;
-            $err_mess .= '. Tentativi rimasti: '.$_SESSION['prove'];
-            if($_SESSION['prove'] == 0) {
-                $err_mess = 'Tentativi esauriti, account bloccato per 60 secondi';
+            $error_mess = $retmsg;
+            $_SESSION['Tentativi']--;
+            $error_mess .= '. Tentativi rimasti: '.$_SESSION['Tentativi'];
+            if($_SESSION['Tentativi'] == 0) {
+                $error_mess = 'Tentativi esauriti, riprova piu tardi';
                 $_SESSION['tempo'] = $_SERVER['REQUEST_TIME'];
             }
         }
     }
-    else if ($_SESSION['timestamp']) {
+    else if ($_SESSION['timestamp']) 
+    {
         $timeLeft = $_SESSION['timestamp'] + 60 - $_SERVER['REQUEST_TIME'];
     
         if ($timeLeft <= 0) {
-            $_SESSION['tentativi'] = 5;
+            $_SESSION['prove'] = 3;
             $_SESSION['timestamp'] = null;
         } else {
-            $err_msg = "Account bloccato. Riprova tra $timeLeft secondi";
+            $err_mess = "Account bloccato. Riprova tra $timeLeft secondi";
         }
     }
     
@@ -68,7 +71,7 @@
 <body>
     <div id="login-container">
         <h2>Login</h2>
-        <div id="error-container"><?= $err_msg ?></div>
+        <div id="error-container"><?= $err_mess ?></div>
         <form action="<?php ($_SERVER['PHP_SELF']) ?>" method="POST">
             <input type="text" name="utente" id="utente" placeholder="utente" required>
             <br>

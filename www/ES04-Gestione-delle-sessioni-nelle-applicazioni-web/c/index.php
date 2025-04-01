@@ -3,7 +3,7 @@
 
     require 'funzioni.php';
 
-    $collegamento = impostaCollegamento();
+    $link = collegamento();
     
 ?>
 
@@ -13,9 +13,9 @@
         <title>Pagina di Benvenuto</title>
     </head>
     <body>
-        <h1>Benvenuto</h1>
+        <h1>Benvenuto\a</h1>
         <a href="riservata.php">Riservata</a>
         <br>
-        <?php echo $collegamento; ?>
+        <?php echo $link; ?>
     </body>
 </html>

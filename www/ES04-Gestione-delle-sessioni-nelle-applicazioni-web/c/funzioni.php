@@ -1,6 +1,6 @@
 <?php
 
-function controlloSessione() 
+function session_control() 
 {
     if(isset($_SESSION['utente'])){
         return [true, 'sessione avviata'];
@@ -9,35 +9,35 @@ function controlloSessione()
     }
 }
 
-function controlloLogin($utente,$password){
-    $username_corretto = 'admin';
-    $password_corretta = 'password123';
+function login_control($utente,$password){
+    $username_esatto = 'Lidia';
+    $password_esatta = 'password';
 
     $username_inserito = $utente;
     $password_inserita = $password;
 
-    if ($username_inserito == $username_corretto && $password_inserita == $password_corretta) {
+    if ($username_inserito == $username_esatto && $password_inserita == $password_esatta) {
         // Se i dati sono corretti, salva il nome utente nella sessione e reindirizza l'utente alla pagina principale
         $_SESSION['utente'] = $username_inserito;
-        return [true, 'login corretto'];
+        return [true, 'login esatto'];
     }
     else {
-        return [false, 'login sbagliato'];
+        return [false, 'login fallito'];
     }
 }
 
-function uscita(){
+function  termina(){
     session_start();
     session_destroy();
     header("Location: login.php");
 }
 
-function impostaCollegamento(){ 
+function collegamento(){ 
     if(checksession()[0]){
-        $collegamento= "<a href='logout.php'>logout</a>";
+        $link= "<a href='logout.php'>logout</a>";
         } else {
-        $collegamento = "<a href='login.php'>login</a>";
+        $link = "<a href='login.php'>login</a>";
     }
-    return $collegamento;
+    return $link;
 }
 ?>
