@@ -25,7 +25,8 @@
     [$retval, $retmsg] = login_control($username, $password);
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && 
-    (!isset($_SESSION['tempo']) || time() - $_SESSION['tempo'] >= 60)) {
+    (!isset($_SESSION['tempo']) || time() - $_SESSION['tempo'] >= 60)) 
+    {
 
     $username = $_POST['username'];
     $password = $_POST['password'];
