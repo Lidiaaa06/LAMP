@@ -18,7 +18,8 @@ function login_control($utente,$password)
     $username_inserito = $utente;
     $password_inserita = $password;
 
-    if ($username_inserito == $username_esatto && $password_inserita == $password_esatta) {
+    if ($username_inserito == $username_esatto && $password_inserita == $password_esatta)
+     {
         // Se i dati sono corretti, salva il nome utente nella sessione e reindirizza l'utente alla pagina principale
         $_SESSION['utente'] = $username_inserito;
         return [true, 'login esatto'];
