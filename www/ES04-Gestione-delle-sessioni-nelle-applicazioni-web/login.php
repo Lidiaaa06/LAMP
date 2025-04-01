@@ -8,7 +8,7 @@ if (isset($_SESSION['username']))
 
 if (isset($_GET['error'])) 
 {
-    $mes_err =$_GET['error'] . '</h3>';
+
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') 
