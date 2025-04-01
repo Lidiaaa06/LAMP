@@ -1,4 +1,4 @@
 <?php 
     require 'funzioni.php';
-    uscita();
+    termina();
 ?>
