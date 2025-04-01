@@ -3,7 +3,7 @@
 
     session_start();
 
-    [$sessionRetval, $sessionmsg] = controlloSessione();
+    [$sessionRetval, $sessionmsg] = session_control();
 
     if (!$sessionRetval) {
         $url = 'Location: login.php';
