@@ -29,13 +29,15 @@ function login_control($utente,$password)
     }
 }
 
-function  termina(){
+function  termina()
+{
     session_start();
     session_destroy();
     header("Location: login.php");
 }
 
-function collegamento(){ 
+function collegamento()
+{ 
     if(checksession()[0])
     {
         $link= "<a href='logout.php'>logout</a>";
