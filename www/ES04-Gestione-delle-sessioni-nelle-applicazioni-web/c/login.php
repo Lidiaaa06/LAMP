@@ -3,7 +3,7 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'GET') 
     {
-        $_SESSION['prove'] = 3 ;
+        $_SESSION['Tentativi'] = 3 ;
         $_SESSION['tempo'] = null;
     }
 
