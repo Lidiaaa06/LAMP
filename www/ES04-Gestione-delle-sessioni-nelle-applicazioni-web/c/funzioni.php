@@ -38,7 +38,7 @@ function  termina()
 
 function collegamento()
 { 
-    if(checksession()[0])
+    if(session_control()[0])
     {
         $link= "<a href='logout.php'>logout</a>";
         } else {
