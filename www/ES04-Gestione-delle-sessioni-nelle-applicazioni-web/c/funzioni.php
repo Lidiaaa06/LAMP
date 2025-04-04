@@ -15,8 +15,8 @@ function login_control($utente,$password)
     $username_esatto = 'Lidia';
     $password_esatta = 'password';
 
-    $username_inserito = $username_esatto;
-    $password_inserita = $password_esatta;
+    $username_inserito = $username;
+    $password_inserita = $password;
 
     if ($username_inserito == $username_esatto && $password_inserita == $password_esatta)
      {
