@@ -22,10 +22,9 @@
 
     $error_mess = $_GET['errore'] ?? '';
 
-    [$rest_val, $rest_mess] = login_control($username, $password);
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && 
-    (!isset($_SESSION['tempo']) || time() - $_SESSION['tempo'] >= 60)) 
+    (!isset($_SESSION['tempo']) ||  $_SESSION['tempo'] + 60 < $_SERVER['REQUEST_TIME'])) 
     {
 
     $username = $_POST['username'];
@@ -35,12 +34,14 @@
 
     if ($rest_val)
      {
-        session_unset(); 
-
         $_SESSION['username'] = $username;
 
-        header('Location: ' . ($_POST['from'] ?? 'index.php'));
+        $link = 'Location: ';
+        $link .= $_POST['from'] != null ? $_POST['from'] : 'index.php';
+
+        header($link);
         die();
+       
 }else {
             $error_mess = $rest_mess;
             $_SESSION['Tentativi']--;
