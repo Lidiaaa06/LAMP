@@ -2,7 +2,7 @@
 
 function session_control() 
 {
-    if(isset($_SESSION['utente']))
+    if(isset($_SESSION['username']))
     {
         return [true, 'sessione avviata'];
         } else {
@@ -15,13 +15,13 @@ function login_control($utente,$password)
     $username_esatto = 'Lidia';
     $password_esatta = 'password';
 
-    $username_inserito = $utente;
+    $username_inserito = $username;
     $password_inserita = $password;
 
     if ($username_inserito == $username_esatto && $password_inserita == $password_esatta)
      {
         // Se i dati sono corretti, salva il nome utente nella sessione e reindirizza l'utente alla pagina principale
-        $_SESSION['utente'] = $username_inserito;
+        $_SESSION['username'] = $username_inserito;
         return [true, 'login esatto'];
     }
     else {
