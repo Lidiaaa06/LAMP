@@ -78,7 +78,7 @@
         <div id="error-container"><?= $err_mess ?></div>
         <form action="<?php ($_SERVER['PHP_SELF']) ?>" method="POST">
             <input type="text" name="utente" id="utente" placeholder="username" required>
-            <br>
+            <br><bt>
             <input type="password" name="password" id="password" placeholder="Password" required>
             <br>
             <input type="submit" value="Login" id="login-button">
