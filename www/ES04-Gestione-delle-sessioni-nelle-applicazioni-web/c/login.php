@@ -80,7 +80,7 @@
             <input type="text" name="utente" id="utente" placeholder="username" required>
             <br><br>
             <input type="password" name="password" id="password" placeholder="Password" required>
-            <br>
+            <br><br>
             <input type="submit" value="Login" id="login-button">
             <input type="hidden" name="from" value="<?=$_GET['from'] ?? ''?>">
         </form>
