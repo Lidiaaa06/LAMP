@@ -10,7 +10,7 @@ function session_control()
     }
 }
 
-function login_control($utente,$password)
+function login_control($username,$password)
 {
     $username_esatto = 'Lidia';
     $password_esatta = '123';
