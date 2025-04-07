@@ -13,7 +13,7 @@ function session_control()
 function login_control($username,$password)
 {
     $username_esatto = 'Lidia';
-    $password_esatta = 'password';
+    $password_esatta = 'lidia';
 
     $username_inserito = $username;
     $password_inserita = $password;
@@ -33,7 +33,7 @@ function  termina()
 {
     session_start();
     session_destroy();
-    header("Location: login.php");
+    header("Location: login.php");  
 }
 
 function collegamento()
