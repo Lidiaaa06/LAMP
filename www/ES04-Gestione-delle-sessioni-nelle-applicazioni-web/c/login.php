@@ -56,7 +56,7 @@
     }
     else if ($_SESSION['time']) 
     {
-        $timeLeft = $_SESSION['time'] + 60 > $_SERVER['REQUEST_TIME']; 
+        $timeLeft = $_SESSION['time'] + 60 < $_SERVER['REQUEST_TIME']; 
     
         if ($timeLeft <= 0) 
         {
