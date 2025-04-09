@@ -46,7 +46,7 @@
        
 }else {
             $error_mess = $rest_mess;
-            $_SESSION['Tentativi']--;
+            $_SESSION['Tentativi']-1;
             $error_mess .= '. Tentativi rimasti: '.$_SESSION['Tentativi'];
             if($_SESSION['Tentativi'] == 0) {
                 $error_mess = 'Tentativi esauriti, riprova piu tardi';
