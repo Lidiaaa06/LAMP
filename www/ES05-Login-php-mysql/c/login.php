@@ -8,17 +8,20 @@ $utente = $_POST['utente'];
 $password = $_POST['password'];
 echo "Nome utente = $utente<br>";
 echo "Password = $password<br>";
-echo "Sessione utente = ". $_SESSION['utente'] . "<br>";
-echo "REQUEST_METHOD = ". $_SERVER['REQUEST_METHOD'] . "<br>";
+//echo "Sessione utente = ". $_SESSION['utente'] . "<br>";
+//echo "REQUEST_METHOD = ". $_SERVER['REQUEST_METHOD'] . "<br>";
 
 if (isset($_SESSION['utente'])) {
     echo "Utente già loggato";
     $mess = 'Accesso gia effettuato';
 } else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    echo "Utente non ancora registrato";
+    echo "Utente non ancora registrato ";
     $utente = $_POST['utente'];
+    echo "<br>";
     $password = $_POST['password'];
+
     echo $utente;
+    echo "<br>";
     echo $password;
 
     [$Accessorestval, $Accessomsg] = logincontroll($utente, $password);
