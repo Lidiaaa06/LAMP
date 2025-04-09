@@ -54,14 +54,14 @@
             }
         }
     }
-    else if ($_SESSION['timestamp']) 
+    else if ($_SESSION['time']) 
     {
-        $timeLeft = $_SESSION['timestamp'] + 60 - $_SERVER['REQUEST_TIME'];
+        $timeLeft = $_SESSION['time'] + 60 - $_SERVER['REQUEST_TIME']; // controlla se 
     
         if ($timeLeft <= 0) 
         {
             $_SESSION['prove'] = 3;
-            $_SESSION['timestamp'] = null;
+            $_SESSION['time'] = null;
         } else {
             $err_mess = "Account bloccato. Riprova tra $timeLeft secondi";
         }
