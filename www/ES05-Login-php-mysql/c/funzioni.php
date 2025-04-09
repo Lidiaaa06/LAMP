@@ -37,6 +37,7 @@ function logincontroll()
     mysqli_close($conn);
 }
 
+ 
 function logout()
 {
     session_start();
