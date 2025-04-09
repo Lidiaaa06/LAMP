@@ -22,10 +22,10 @@ function login_control($username,$password)
      {
         // Se i dati sono corretti, salva il nome utente nella sessione e reindirizza l'utente alla pagina principale
         $_SESSION['username'] = $username_inserito;
-        return [true, 'login esatto'];
+        return  [true, 'login esatto'];
     }
     else {
-        return [false, 'login fallito'];
+        return  [false, 'login fallito'];
     }
 }
 

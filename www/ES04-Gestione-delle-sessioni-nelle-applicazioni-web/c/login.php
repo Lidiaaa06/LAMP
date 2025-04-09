@@ -3,20 +3,22 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'GET') 
     {
-        $_SESSION['Tentativi'] = 3 ;
+        $_SESSION['Tentativi'] = 4 ;
         $_SESSION['tempo'] = null;
     }
 
     require 'funzioni.php';
+
+    //destrutturazione array
 
     [$rest_val, $rest_mess] = session_control();
 
     if($rest_val) 
     {
         $link = 'Location: ';
-        $link .= $_GET['from'] ?? 'index.php';
+        $link .= $_GET['from'] ?? 'index.php'; //concatenazione
     
-        header($link);
+        header($link); //reinderizza
         die();
     }
 

@@ -14,7 +14,7 @@ if (isset($_SESSION['utente'])) {
     echo "Utente già loggato";
     $mess = 'Accesso gia effettuato';
 } else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    echo "Utente non ancora registrato ";
+    
   
 
     [$Accessorestval, $Accessomsg] = logincontroll($utente, $password);
