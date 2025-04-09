@@ -56,11 +56,11 @@
     }
     else if ($_SESSION['time']) 
     {
-        $timeLeft = $_SESSION['time'] + 60 - $_SERVER['REQUEST_TIME']; // controlla se 
+        $timeLeft = $_SESSION['time'] + 60 > $_SERVER['REQUEST_TIME']; 
     
         if ($timeLeft <= 0) 
         {
-            $_SESSION['prove'] = 3;
+            $_SESSION['prove'] = 4;
             $_SESSION['time'] = null;
         } else {
             $err_mess = "Account bloccato. Riprova tra $timeLeft secondi";
