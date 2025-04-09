@@ -17,10 +17,6 @@ if (isset($_SESSION['utente'])) {
     echo "Utente non ancora registrato ";
   
 
-    echo $utente;
-    echo "<br>";
-    echo $password;
-
     [$Accessorestval, $Accessomsg] = logincontroll($utente, $password);
 
     $mess = $Accessomsg;
