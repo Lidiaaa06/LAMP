@@ -1,41 +1,41 @@
 <?php
-    session_start();
+require 'funzioni.php';
 
-    if($_SERVER['REQUEST_METHOD'] == 'GET') 
-    {
-        $_SESSION['Tentativi'] = 4 ;
-        $_SESSION['tempo'] = null;
-    }
+session_start();
 
-    require 'funzioni.php';
+//
+$error_mess = $_GET['errore'] ?? '';
 
-    //destrutturazione array
+//Ogni volta che arrivo su questa pagina utilizzando il metodo GET
+//Inizializzo tentativi e tempo
+if($_SERVER['REQUEST_METHOD'] == 'GET') 
+{
+    $_SESSION['Tentativi'] = 4 ;
+    $_SESSION['tempo'] = null;
+}
 
-    [$rest_val, $rest_mess] = session_control();
+//Se l'utente ha già fatto il login vado subito alla home page
+[$rest_val, $rest_mess] = session_control();
+if($rest_val) 
+{
+    $link = 'Location: ';
+    $link .= $_GET['from'] ?? 'index.php'; //concatenazione
 
-    if($rest_val) 
-    {
-        $link = 'Location: ';
-        $link .= $_GET['from'] ?? 'index.php'; //concatenazione
-    
-        header($link); //reinderizza
-        die();
-    }
-
-    $error_mess = $_GET['errore'] ?? '';
+    header($link); //reinderizza
+    die();
+}
 
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && 
-    (!isset($_SESSION['tempo']) ||  $_SESSION['tempo'] + 60 < $_SERVER['REQUEST_TIME'])) 
-    {
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' &&  (!isset($_SESSION['tempo']) ||  $_SESSION['tempo'] + 60 < $_SERVER['REQUEST_TIME'])) 
+{
     $username = $_POST['username'];
     $password = $_POST['password'];
 
     [$rest_val, $rest_mess] = login_control($username, $password);
 
     if ($rest_val)
-     {
+    {
         $_SESSION['username'] = $username;
 
         $link = 'Location: ';
@@ -43,29 +43,31 @@
 
         header($link);
         die();
-       
-}else {
-            $error_mess = $rest_mess;
-            $_SESSION['Tentativi']-1;
-            $error_mess .= '. Tentativi rimasti: '.$_SESSION['Tentativi'];
-            if($_SESSION['Tentativi'] == 0) {
-                $error_mess = 'Tentativi esauriti, riprova piu tardi';
-                $_SESSION['tempo'] = $_SERVER['REQUEST_TIME'];
-            }
-        }
+        
     }
-    else if ($_SESSION['time']) 
+    else 
     {
-        $timeLeft = $_SESSION['time'] + 60 < $_SERVER['REQUEST_TIME']; 
-    
-        if ($timeLeft <= 0) 
-        {
-            $_SESSION['prove'] = 4;
-            $_SESSION['time'] = null;
-        } else {
-            $err_mess = "Account bloccato. Riprova tra $timeLeft secondi";
+        $error_mess = $rest_mess;
+        $_SESSION['Tentativi']-1;
+        $error_mess .= '. Tentativi rimasti: '.$_SESSION['Tentativi'];
+        if($_SESSION['Tentativi'] == 0) {
+            $error_mess = 'Tentativi esauriti, riprova piu tardi';
+            $_SESSION['tempo'] = $_SERVER['REQUEST_TIME'];
         }
     }
+} 
+else if ($_SESSION['time']) 
+{
+    $timeLeft = $_SESSION['time'] + 60 < $_SERVER['REQUEST_TIME']; 
+
+    if ($timeLeft <= 0) 
+    {
+        $_SESSION['prove'] = 4;
+        $_SESSION['time'] = null;
+    } else {
+        $err_mess = "Account bloccato. Riprova tra $timeLeft secondi";
+    }
+}
     
 ?>
 

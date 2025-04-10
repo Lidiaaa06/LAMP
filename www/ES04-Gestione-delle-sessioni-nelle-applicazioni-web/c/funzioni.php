@@ -5,7 +5,9 @@ function session_control()
     if(isset($_SESSION['username']))
     {
         return [true, 'sessione avviata'];
-        } else {
+    } 
+    else 
+    {
         return [false, 'sessione non avviata'];
     }
 }
