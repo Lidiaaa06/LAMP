@@ -65,7 +65,7 @@ else if ($_SESSION['time'])
         $_SESSION['prove'] = 4;
         $_SESSION['time'] = null;
     } else {
-        $err_mess = "Account bloccato. Riprova tra $timeLeft secondi";
+        $error_mess = "Account bloccato. Riprova tra $timeLeft secondi";
     }
 }
     
@@ -79,7 +79,7 @@ else if ($_SESSION['time'])
 <body>
     <div id="login-container">
         <h2>Login</h2>
-        <div id="error-container"><?= $err_mess ?></div>
+        <div id="error-container"><?= $error_mess ?></div>
         <form action="<?php ($_SERVER['PHP_SELF']) ?>" method="POST">
             <input type="text" name="utente" id="utente" placeholder="username" required>
             <br><br>
