@@ -10,7 +10,8 @@ define('DB_NAME', 'ES05');
 $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
 // Verifica della connessione
-if ($conn->connect_error) {
+if ($conn->connect_error) 
+{
     die("Connessione fallita: " . $conn->connect_error); 
 }
 
@@ -20,7 +21,8 @@ $result = mysqli_query($conn,$sql);
 
 if(!result) exit ("errore");
 while($riga=msqli_fetch_assocc($result)){
-    foreach($riga as $col){
+    foreach($riga as $col)
+    {
         echo $col;
-}
+    }
 }
