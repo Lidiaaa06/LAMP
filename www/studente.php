@@ -20,7 +20,7 @@ $result = mysqli_query($conn,$sql);
 
 if(!result) exit ("errore");
 while($riga=msqli_fetch_assocc($result)){
-    foreach($riga as $coll){
-        echo "$coll";
+    foreach($riga as $col){
+        echo "$col";
 }
 }
