@@ -4,7 +4,7 @@ Use Scuola;
 
 CREATE TABLE IF NOT EXISTS corso(
     id INT auto_increment PRIMARY KEY,
-    nome varchar(100) not null,
+    nome varchar(100) not null
 );
 
 CREATE TABLE IF NOT EXISTS  studenti(
@@ -17,11 +17,12 @@ CREATE TABLE IF NOT EXISTS  studenti(
     FOREIGN KEY (corso_studi) REFERENCES corso(id)
 );
 
+
 CREATE TABLE IF NOT EXISTS valutazioni(
     id INT auto_increment PRIMARY KEY,
     studente_matricola int not null,
     corso_id int not null,
     voto int not null,
-    data_valutazione date not null,
+    data_valutazione date not null
 );
 
